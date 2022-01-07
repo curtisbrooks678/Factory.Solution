@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using FitnessTracker.Models;
+using Factory.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Factory.Controllers

@@ -1,0 +1,24 @@
+@model Factory.Models.Machine
+
+<h2>Machine Details</h2>
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+@* <h3>@Html.DisplayNameFor(model => model.Gym.Location): @Html.DisplayFor(model => model.Gym.Location)</h3> *@
+
+@if (@Model.JoinEntities.Count == 0)
+{
+  <p>This machine has no licensed engineers</p>
+}
+else
+{
+  <h4>Engineers licensed for this machine:</h4>
+  <ul>
+    @foreach (var join in Model.JoinEntities)
+    {
+      <li>@join.Engineer.Name</li>
+    }
+  </ul>
+}
+
+
+<p class="bottom-link">@Html.ActionLink("Edit machine", "Edit", new { id = Model.MachineId })</p>
+<p class="bottom-link">@Html.ActionLink("Delete machine", "Delete", new { id = Model.MachineId })</p>

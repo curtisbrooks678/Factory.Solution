@@ -32,7 +32,7 @@ namespace Factory.Controllers
     [HttpPost]
     public ActionResult Create(Machine machine)
     {
-      _db.Machines.Add(Machine);
+      _db.Machines.Add(machine);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
@@ -56,7 +56,7 @@ namespace Factory.Controllers
     [HttpPost]
     public ActionResult Edit(Machine machine)
     {
-      _db.Entry(Machine).State = EntityState.Modified;
+      _db.Entry(machine).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

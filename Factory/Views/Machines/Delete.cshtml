@@ -1,0 +1,8 @@
+@model Factory.Models.Machine
+
+<h2>Are you sure you want to delete @Html.DisplayFor(model => model.Name) machine?</h2>
+
+@using (Html.BeginForm())
+{
+  <button class="btn" type="submit">Delete machine</button>
+}

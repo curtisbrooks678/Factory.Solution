@@ -1,6 +1,6 @@
-@model Factory.Models.Engineer
+@model Factory.Models.Machine
 
-<h4>Add a new engineer</h4>
+<h4>Add a new machine</h4>
 
 @using (Html.BeginForm())
 {
@@ -10,5 +10,5 @@
   @* @Html.Label("Select gym")
   @Html.DropDownList("GymId") *@
 
-  <input type="submit" value="Add new engineer" class="btn btn-default" />
+  <button class="btn" type="submit">Add new machine</button>
 }

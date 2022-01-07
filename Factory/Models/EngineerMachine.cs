@@ -1,4 +1,4 @@
-namespace FitnessTracker.Models
+namespace Factory.Models
 {
   public class EngineerMachine
   {

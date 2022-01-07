@@ -1,0 +1,14 @@
+@model Factory.Models.Member
+
+<h4>Add a new engineer</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new {@required="required"})
+
+  @* @Html.Label("Select gym")
+  @Html.DropDownList("GymId") *@
+
+  <input type="submit" value="Add new engineer" class="btn btn-default" />
+}

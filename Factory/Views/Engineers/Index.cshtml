@@ -2,18 +2,7 @@
 @model List<Factory.Models.Engineer>
 
 
-@* @{
-  List<Gym> gyms = ViewData["gyms"] as List<Gym>;
-} *@
-
 <h1>Engineers</h1>
-
-@* @if (gyms.Count == 0)
-{
-  <h3>You need to add a gym before you can add a member</h3>
-}
-else
-{ *@
 
 @if (@Model.Count == 0)
 {

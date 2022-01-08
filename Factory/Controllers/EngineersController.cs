@@ -18,15 +18,12 @@ namespace Factory.Controllers
 
     public ActionResult Index()
     {
-      // List<Gym> gyms = _db.Gyms.ToList();
-      // ViewData.Add("gyms", gyms);
       List<Engineer> model = _db.Engineers.ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
-      // ViewBag.GymId = new SelectList(_db.Gyms, "GymId", "Location");
       return View();
     }
 
@@ -49,7 +46,6 @@ namespace Factory.Controllers
 
     public ActionResult Edit(int id)
     {
-      // ViewBag.GymId = new SelectList(_db.Gyms, "GymId", "Location");
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
       return View(thisEngineer);
     }

@@ -17,15 +17,12 @@ namespace Factory.Controllers
     
     public ActionResult Index()
     {
-      // List<Gym> gyms = _db.Gyms.ToList();
-      // ViewData.Add("gyms", gyms);
       List<Machine> model = _db.Machines.ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
-      // ViewBag.GymId = new SelectList(_db.Gyms, "GymId", "Location");
       return View();
     }
 
@@ -48,7 +45,6 @@ namespace Factory.Controllers
 
     public ActionResult Edit(int id)
     {
-      // ViewBag.GymId = new SelectList(_db.Gyms, "GymId", "Location");
       Machine thisMachine = _db.Machines.FirstOrDefault(Machine => Machine.MachineId == id);
       return View(thisMachine);
     }

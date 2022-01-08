@@ -73,7 +73,7 @@ h4, h3 {
 }
 
 #nav-ul {
-  background-color: rgb(241, 84, 202);
+  background-color: lavender;
   display: flex;
 }
 
@@ -156,51 +156,4 @@ nav li a:hover {
 
 #hero a:hover :first-child {
   width: 65%;
-}
-
-#member-details-ul {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 1em 0 2em 0;
-}
-
-.member-details-li {
-  background-color: rgb(241, 84, 202);
-  color: black;
-  width: 20em;
-  padding: 1em 0;
-  border-radius: .5em;
-  font-size: 1.3rem;
-}
-
-.member-details-li p {
-  font-size: 1.2rem;
-}
-
-.member-details-li input {
-  border: none;
-  margin-top: .5em;
-  padding: .25em .5em;
-  border-radius: .25em;
-  font-size: .8rem;
-}
-
-#completed {
-  color: blue;
-}
-
-#incomplete {
-  color: darkred;
-}
-
-#member-details-filter a{
-  color: black;
-  background-color: rgb(241, 84, 202);
-  padding: .25em .5em;
-  border-radius: .25em;
-}
-
-#member-details-filter {
-  margin-top: 1.5em;
 }

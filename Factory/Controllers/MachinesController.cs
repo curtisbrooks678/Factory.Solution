@@ -61,6 +61,44 @@ namespace Factory.Controllers
       return RedirectToAction("Index");
     }
 
+    public ActionResult AddEngineer(int id)
+    {
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      return View(thisMachine);
+    }
+
+    [HttpPost]
+    public ActionResult AddEngineer(Machine machine, int EngineerId)
+    {
+      bool alreadyExists = _db.EngineerMachine.Any(engineerMachine => engineerMachine.MachineId == machine.MachineId && engineerMachine.EngineerId == EngineerId);
+      if (EngineerId != 0 && !alreadyExists)
+      {
+        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
+      }
+      _db.SaveChanges();
+      if (alreadyExists)
+      {
+        return RedirectToAction("AddEngineerError", new { id = machine.MachineId });
+      }
+      return RedirectToAction("Details", new { id = machine.MachineId });
+    }
+
+    public ActionResult AddEngineerError(int id)
+    {
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      return View(thisMachine);
+    }
+
+    [HttpPost]
+    public ActionResult DeleteEngineer(int joinId)
+    {
+      var joinEntry = _db.EngineerMachine.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+      _db.EngineerMachine.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = joinEntry.MachineId });
+    }
+
     public ActionResult Delete(int id)
     {
       Machine thisMachine = _db.Machines.FirstOrDefault(Machine => Machine.MachineId == id);
